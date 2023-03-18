@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		AF514F9629C6665C009EF16D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9529C6665C009EF16D /* AppDelegate.swift */; };
 		AF514F9829C6665C009EF16D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9729C6665C009EF16D /* SceneDelegate.swift */; };
-		AF514F9A29C6665C009EF16D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9929C6665C009EF16D /* ViewController.swift */; };
+		AF514F9A29C6665C009EF16D /* FindFlagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9929C6665C009EF16D /* FindFlagViewController.swift */; };
 		AF514FA029C6665C009EF16D /* FindTheFlag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9E29C6665C009EF16D /* FindTheFlag.xcdatamodeld */; };
 		AF514FA229C6665E009EF16D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF514FA129C6665E009EF16D /* Assets.xcassets */; };
 		AF514FA529C6665E009EF16D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF514FA329C6665E009EF16D /* LaunchScreen.storyboard */; };
+		AF514FAF29C66D63009EF16D /* FindFlagAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514FAE29C66D63009EF16D /* FindFlagAPI.swift */; };
+		AF514FB229C66E80009EF16D /* FindFlagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514FB129C66E80009EF16D /* FindFlagViewModel.swift */; };
+		AF514FB529C66F79009EF16D /* FindFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514FB429C66F79009EF16D /* FindFlagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF514F9229C6665C009EF16D /* FindTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF514F9529C6665C009EF16D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF514F9729C6665C009EF16D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF514F9929C6665C009EF16D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF514F9929C6665C009EF16D /* FindFlagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFlagViewController.swift; sourceTree = "<group>"; };
 		AF514F9F29C6665C009EF16D /* FindTheFlag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FindTheFlag.xcdatamodel; sourceTree = "<group>"; };
 		AF514FA129C6665E009EF16D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF514FA429C6665E009EF16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF514FA629C6665E009EF16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF514FAE29C66D63009EF16D /* FindFlagAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFlagAPI.swift; sourceTree = "<group>"; };
+		AF514FB129C66E80009EF16D /* FindFlagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFlagViewModel.swift; sourceTree = "<group>"; };
+		AF514FB429C66F79009EF16D /* FindFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFlagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		AF514F9429C6665C009EF16D /* FindTheFlag */ = {
 			isa = PBXGroup;
 			children = (
-				AF514F9529C6665C009EF16D /* AppDelegate.swift */,
-				AF514F9729C6665C009EF16D /* SceneDelegate.swift */,
-				AF514F9929C6665C009EF16D /* ViewController.swift */,
-				AF514FA129C6665E009EF16D /* Assets.xcassets */,
-				AF514FA329C6665E009EF16D /* LaunchScreen.storyboard */,
+				AF514FAC29C66CD5009EF16D /* Resources */,
+				AF514FB329C66E86009EF16D /* ViewModels */,
+				AF514FB629C66F7E009EF16D /* Views */,
+				AF514FAD29C66D01009EF16D /* ViewController */,
+				AF514FB029C66D84009EF16D /* Model */,
 				AF514FA629C6665E009EF16D /* Info.plist */,
 				AF514F9E29C6665C009EF16D /* FindTheFlag.xcdatamodeld */,
 			);
 			path = FindTheFlag;
+			sourceTree = "<group>";
+		};
+		AF514FAC29C66CD5009EF16D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF514FA129C6665E009EF16D /* Assets.xcassets */,
+				AF514F9529C6665C009EF16D /* AppDelegate.swift */,
+				AF514F9729C6665C009EF16D /* SceneDelegate.swift */,
+				AF514FA329C6665E009EF16D /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AF514FAD29C66D01009EF16D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AF514F9929C6665C009EF16D /* FindFlagViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AF514FB029C66D84009EF16D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF514FAE29C66D63009EF16D /* FindFlagAPI.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF514FB329C66E86009EF16D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AF514FB129C66E80009EF16D /* FindFlagViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AF514FB629C66F7E009EF16D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF514FB429C66F79009EF16D /* FindFlagView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF514FAF29C66D63009EF16D /* FindFlagAPI.swift in Sources */,
 				AF514FA029C6665C009EF16D /* FindTheFlag.xcdatamodeld in Sources */,
-				AF514F9A29C6665C009EF16D /* ViewController.swift in Sources */,
+				AF514F9A29C6665C009EF16D /* FindFlagViewController.swift in Sources */,
+				AF514FB529C66F79009EF16D /* FindFlagView.swift in Sources */,
 				AF514F9629C6665C009EF16D /* AppDelegate.swift in Sources */,
+				AF514FB229C66E80009EF16D /* FindFlagViewModel.swift in Sources */,
 				AF514F9829C6665C009EF16D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

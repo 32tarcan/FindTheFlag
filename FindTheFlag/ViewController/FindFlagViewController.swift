@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FindFlagViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
