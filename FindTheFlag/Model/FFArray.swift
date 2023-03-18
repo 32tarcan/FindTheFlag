@@ -7,8 +7,5 @@
 
 import Foundation
 
-struct flagAPI {
-    
-   
-    
-}
+
+
