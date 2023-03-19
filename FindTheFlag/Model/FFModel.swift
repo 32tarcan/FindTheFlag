@@ -11,7 +11,7 @@ class FFModel: Codable {
     let country: [String]
 }
 
-let country = [
+let countryImage = [
     "turkey",
     "usa",
     "germany",
@@ -28,4 +28,24 @@ let country = [
     "russia",
     "australia",
     "southAfrica"
+]
+
+let countryLabel = [
+    "turkey",
+    "usa",
+    "germany",
+    "france",
+    "italy",
+    "spain",
+    "uk",
+    "china",
+    "japan",
+    "canada",
+    "brazil",
+    "argentina",
+    "india",
+    "russia",
+    "australia",
+    "southAfrica"
+
 ]
