@@ -7,12 +7,8 @@
 
 import UIKit
 
-protocol FindFlagViewModelDelegate: AnyObject {
-    func didLoadFlags(flags: [Flag])
-    func didFailWithError(error: Error)
-}
 
-class FindFlagViewController: UIViewController {
+class FFViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
