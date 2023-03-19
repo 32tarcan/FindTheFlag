@@ -9,14 +9,18 @@ import UIKit
 
 
 class FFViewController: UIViewController {
+    
+    var ffView: FFView!
+    let viewModel = FFViewModelAPI()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .systemBackground
+        ffView = FFView(frame: view.bounds, viewModel: viewModel)
+        view.addSubview(ffView)
+    
     }
-    
-    
-
-
 }
+
 
