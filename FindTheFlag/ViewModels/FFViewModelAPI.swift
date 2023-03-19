@@ -18,9 +18,31 @@ class FFViewModelAPI {
     
     let flagAPI = "https://flag.herokuapp.com/country"
     
+    
+    
     func fetchFlag() {
         let urlString = "\(flagAPI)/\(country)"
         performRequest(with: urlString)
+        
+        let country = [
+            "turkey",
+            "usa",
+            "germany",
+            "france",
+            "italy",
+            "spain",
+            "uk",
+            "china",
+            "japan",
+            "canada",
+            "brazil",
+            "argentina",
+            "india",
+            "russia",
+            "australia",
+            "southAfrica"
+        ]
+
         
     }
     
@@ -34,7 +56,7 @@ class FFViewModelAPI {
                 }
                 if let safeData = data {
                     if let flags = self.parseJSON(safeData) {
-                        if let country = flags.first {
+                        if let country = flags.randomElement() {
                             self.delegate?.didLoadFlags(flags: flags, country: country)
                         }
                     }

@@ -16,7 +16,6 @@ class FFViewController: UIViewController {
     }
     
     
-    weak var delegate: FindFlagViewModelDelegate?
 
 
 }
