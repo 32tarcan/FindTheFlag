@@ -21,10 +21,10 @@ class FFViewModelAPI {
     
     
     func fetchFlag() {
-        let urlString = "\(flagAPI)/\(country)"
+        let urlString = "\(flagAPI)/\(countryImage)"
         performRequest(with: urlString)
         
-        let country = [
+        let countryImage = [
             "turkey",
             "usa",
             "germany",
