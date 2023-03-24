@@ -11,6 +11,8 @@ class FFViewController: UIViewController {
 
     let viewModel = FFViewModelAPI()
     var ffView: FFView!
+    var model = FFModel()
+    
 
     
     
