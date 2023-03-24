@@ -9,19 +9,20 @@ import UIKit
 
 
 
-class  FFView: UIView  {
+class FFView: UIView  {
     let viewModel: FFViewModelAPI
     let viewController = FFViewController()
-    var ffModel = FFModel()
+    var ffmodel: FFModel
     
 
     
     
     
     
-    public let countryButton1: UIButton = {
+    private lazy var countryButton1: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
-        button.setTitle("asdsad", for: .normal)
+
+        button.setTitle(ffmodel.countryLabel.randomElement(), for: .normal)
         button.backgroundColor = .systemBrown
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
@@ -33,9 +34,10 @@ class  FFView: UIView  {
         return button
     }()
     
-    private let countryButton2: UIButton = {
+    private lazy var countryButton2: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
-        button.setTitle("safas", for: .normal)
+        
+        button.setTitle(ffmodel.countryLabel.randomElement(), for: .normal)
         button.backgroundColor = .systemBrown
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
@@ -49,9 +51,9 @@ class  FFView: UIView  {
         return button
     }()
     
-    private let countryButton3: UIButton = {
+    private lazy var countryButton3: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
-        button.setTitle("SORU3", for: .normal)
+        button.setTitle(ffmodel.countryLabel.randomElement(), for: .normal)
         button.backgroundColor = .systemBrown
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
@@ -67,9 +69,9 @@ class  FFView: UIView  {
     }()
     
     
-    private let countryButton4: UIButton = {
+    private lazy var countryButton4: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
-        button.setTitle("asdad", for: .normal)
+        button.setTitle(ffmodel.countryLabel.randomElement(), for: .normal)
         button.backgroundColor = .systemBrown
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
@@ -122,6 +124,7 @@ class  FFView: UIView  {
     
     init(frame: CGRect, viewModel: FFViewModelAPI) {
         self.viewModel = viewModel
+        self.ffmodel = FFModel()
         super.init(frame: frame)
         setupViews()
         addConstraints()
