@@ -7,50 +7,117 @@
 
 import UIKit
 
-class  FFView: UIView {
+
+
+class  FFView: UIView  {
     let viewModel: FFViewModelAPI
     let viewController = FFViewController()
+    var ffModel = FFModel()
+    
+
     
     
-    private let countryButton1: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 30, weight: .heavy)
-        label.text = "SORU1"
-        label.textColor = .black
+    
+    
+    public let countryButton1: UIButton = {
+        let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
+        button.setTitle("asdsad", for: .normal)
+        button.backgroundColor = .systemBrown
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10.0
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.tag = 1
         
-        return label
+        
+        return button
     }()
     
-    private let countryButton2: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 30, weight: .heavy)
-        label.text = "SORU2"
-        label.textColor = .black
+    private let countryButton2: UIButton = {
+        let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
+        button.setTitle("safas", for: .normal)
+        button.backgroundColor = .systemBrown
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10.0
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.tag = 2
         
-        return label
+        
+        
+        
+        return button
     }()
     
-    private let countryButton3: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 30, weight: .heavy)
-        label.text = "SORU3"
-        label.textColor = .black
+    private let countryButton3: UIButton = {
+        let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
+        button.setTitle("SORU3", for: .normal)
+        button.backgroundColor = .systemBrown
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10.0
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.tag = 3
         
-        return label
+        
+        
+        
+        
+        return button
     }()
     
-    private let countryButton4: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 30, weight: .heavy)
-        label.text = "SORU4"
-        label.textColor = .black
+    
+    private let countryButton4: UIButton = {
+        let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
+        button.setTitle("asdad", for: .normal)
+        button.backgroundColor = .systemBrown
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10.0
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         
-        return label
+        button.tag = 4
+        
+        
+        
+        return button
     }()
+    
+    
+    private var correctAnswerFound = false
+    private var correctAnswer = Int.random(in: 1...4)
+    
+    
+    @objc func buttonTapped(_ sender: UIButton) {
+        
+        if correctAnswerFound == false {
+            if sender.tag == correctAnswer {
+                sender.backgroundColor = .systemGreen
+            correctAnswerFound = true
+        
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    self.countryButton1.backgroundColor = .systemBrown
+                    self.countryButton2.backgroundColor = .systemBrown
+                    self.countryButton3.backgroundColor = .systemBrown
+                    self.countryButton4.backgroundColor = .systemBrown
+                    self.correctAnswer = Int.random(in: 1...4)
+                    self.correctAnswerFound = false
+                    
+                })
+                
+              
+                
+        
+        } else {
+            sender.backgroundColor = .systemRed
+            
+        }
+        
+        
+    }
+        
+        
+    }
     
     
     init(frame: CGRect, viewModel: FFViewModelAPI) {
@@ -58,6 +125,7 @@ class  FFView: UIView {
         super.init(frame: frame)
         setupViews()
         addConstraints()
+    
         
     }
     
@@ -70,39 +138,60 @@ class  FFView: UIView {
         addSubview(countryButton2)
         addSubview(countryButton3)
         addSubview(countryButton4)
+        addSubview(countryImageView)
+        
         
     }
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
             // Button 1
-            countryButton1.topAnchor.constraint(equalTo: topAnchor, constant: 550), // yukarıda boşluk bırakılıyor
-            countryButton1.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50), // Sağa doğru 20 birim kaydırılıyor
+            countryButton1.topAnchor.constraint(equalTo: topAnchor, constant: 500),
+            countryButton1.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             countryButton1.trailingAnchor.constraint(equalTo: countryButton2.leadingAnchor, constant: -20),
-            countryButton1.bottomAnchor.constraint(equalTo: countryButton3.topAnchor),
+            countryButton1.bottomAnchor.constraint(equalTo: countryButton3.topAnchor, constant: -20), // countryButton1 ve countryButton3 arasında 20 birim yatay boşluk bırakılıyor
             countryButton1.widthAnchor.constraint(equalTo: countryButton2.widthAnchor),
             countryButton1.heightAnchor.constraint(equalTo: countryButton3.heightAnchor),
 
             // Button 2
-            countryButton2.topAnchor.constraint(equalTo: topAnchor, constant: 550), // yukarıda boşluk bırakılıyor
-            countryButton2.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20), // Sola doğru 20 birim kaydırılıyor
-            countryButton2.bottomAnchor.constraint(equalTo: countryButton4.topAnchor),
+            countryButton2.topAnchor.constraint(equalTo: topAnchor, constant: 500),
+            countryButton2.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30), // countryButton2'ye 50 piksel soldan boşluk bırakılıyor
+            countryButton2.bottomAnchor.constraint(equalTo: countryButton4.topAnchor, constant: -20), // countryButton2 ve countryButton4 arasında 20 birim dikey boşluk bırakılıyor
             countryButton2.widthAnchor.constraint(equalTo: countryButton1.widthAnchor),
             countryButton2.heightAnchor.constraint(equalTo: countryButton4.heightAnchor),
 
             // Button 3
-            countryButton3.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50), // Sağa doğru 20 birim kaydırılıyor
-            countryButton3.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50), // Yukarı doğru 50 birim kaydırılıyor
-            countryButton3.trailingAnchor.constraint(equalTo: countryButton4.leadingAnchor, constant: -15), // Sola doğru 20 birim kaydırılıyor
+            countryButton3.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            countryButton3.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100),
+            countryButton3.trailingAnchor.constraint(equalTo: countryButton4.leadingAnchor, constant: -20), // countryButton3 ve countryButton4 arasında 20 birim yatay boşluk bırakılıyor
             countryButton3.widthAnchor.constraint(equalTo: countryButton4.widthAnchor),
             countryButton3.heightAnchor.constraint(equalTo: countryButton1.heightAnchor),
 
             // Button 4
-            countryButton4.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15), // Sola doğru 20 birim kaydırılıyor
-            countryButton4.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50), // Yukarı doğru 50 birim kaydırılıyor
+            countryButton4.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30), // countryButton4'e 50 piksel sağdan boşluk bırakılıyor
+            countryButton4.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100),
             countryButton4.widthAnchor.constraint(equalTo: countryButton3.widthAnchor),
-            countryButton4.heightAnchor.constraint(equalTo: countryButton2.heightAnchor)
-        ])
+            countryButton4.heightAnchor.constraint(equalTo: countryButton2.heightAnchor),
+            
+            
+                countryImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+                countryImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -110),
+                countryImageView.widthAnchor.constraint(equalToConstant: 300),
+                countryImageView.heightAnchor.constraint(equalToConstant: 200)
+            ])
+            
+            
+            
     }
+    
+    let countryImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+        
+    
     
 }
