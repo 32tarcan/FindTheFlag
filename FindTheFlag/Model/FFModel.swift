@@ -8,44 +8,55 @@
 import Foundation
 
 class FFModel: Codable {
-    let country: [String]
+    
+    
+
+    var countryImage = [
+        "turkey",
+        "usa",
+        "germany",
+        "france",
+        "italy",
+        "spain",
+        "uk",
+        "china",
+        "japan",
+        "canada",
+        "brazil",
+        "argentina",
+        "india",
+        "russia",
+        "australia",
+        "southAfrica"
+    ]
+
+    var countryLabel = [
+        "turkey",
+        "usa",
+        "germany",
+        "france",
+        "italy",
+        "spain",
+        "uk",
+        "china",
+        "japan",
+        "canada",
+        "brazil",
+        "argentina",
+        "india",
+        "russia",
+        "australia",
+        "southAfrica"
+
+    ]
+    
+    
 }
 
-let countryImage = [
-    "turkey",
-    "usa",
-    "germany",
-    "france",
-    "italy",
-    "spain",
-    "uk",
-    "china",
-    "japan",
-    "canada",
-    "brazil",
-    "argentina",
-    "india",
-    "russia",
-    "australia",
-    "southAfrica"
-]
 
-let countryLabel = [
-    "turkey",
-    "usa",
-    "germany",
-    "france",
-    "italy",
-    "spain",
-    "uk",
-    "china",
-    "japan",
-    "canada",
-    "brazil",
-    "argentina",
-    "india",
-    "russia",
-    "australia",
-    "southAfrica"
 
-]
+
+
+
+
+
