@@ -7,46 +7,25 @@
 
 import UIKit
 
-protocol FFViewModelDelegate: AnyObject {
-    func didLoadFlags(flags: [FFModel], country: FFModel)
+protocol FFViewModelDelegate {
+    func didLoadFlags(_ ffViewModelAPI: FFViewModelAPI, flags: FlagData)
     func didFailWithError(error: Error)
 }
+
 
 class FFViewModelAPI {
     
     var delegate: FFViewModelDelegate?
+    var ffModel = FFModel()
     
     let flagAPI = "https://flag.herokuapp.com/country"
     
-    
-    
     func fetchFlag() {
-        let urlString = "\(flagAPI)/\(countryImage)"
-        performRequest(with: urlString)
-        
-        let countryImage = [
-            "turkey",
-            "usa",
-            "germany",
-            "france",
-            "italy",
-            "spain",
-            "uk",
-            "china",
-            "japan",
-            "canada",
-            "brazil",
-            "argentina",
-            "india",
-            "russia",
-            "australia",
-            "southAfrica"
-        ]
-
-        
+        let urlString = "\(flagAPI)/\(ffModel.countryImage[0])"
+        fetchJSON(from: urlString)
     }
     
-    func performRequest(with urlString: String) {
+    func fetchJSON(from urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -54,37 +33,46 @@ class FFViewModelAPI {
                     self.delegate?.didFailWithError(error: error!)
                     return
                 }
+                
                 if let safeData = data {
-                    if let flags = self.parseJSON(safeData) {
-                        if let country = flags.randomElement() {
-                            self.delegate?.didLoadFlags(flags: flags, country: country)
+                    
+                  
+                        if let flagJson = self.parseJSON(safeData) {
+                            
+                            self.delegate?.didLoadFlags(self, flags: flagJson)
+                            
+                            
+                            
+                            
+                        } else {
+                            self.delegate?.didFailWithError(error: error!)
                         }
-                    }
                 }
             }
-            
             task.resume()
+        } else {
+            print("Invalid URL: \(urlString)")
         }
     }
     
     
     
-    func parseJSON(_ data: Data) -> [FFModel]? {
+    
+    
+    func parseJSON(_ data: Data) -> FlagData? {
+        
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode([FFModel].self, from: data)
+            let decodedData = try decoder.decode(FlagData.self, from: data)
             return decodedData
+            
         } catch {
             delegate?.didFailWithError(error: error)
             return nil
         }
-        
     }
+    
+    
 }
-
-
-
-
-
 
 
