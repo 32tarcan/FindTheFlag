@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF3C272529CF81CC005DBDA1 /* FFScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C272429CF81CC005DBDA1 /* FFScoreViewController.swift */; };
 		AF514F9629C6665C009EF16D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9529C6665C009EF16D /* AppDelegate.swift */; };
 		AF514F9829C6665C009EF16D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9729C6665C009EF16D /* SceneDelegate.swift */; };
 		AF514F9A29C6665C009EF16D /* FFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9929C6665C009EF16D /* FFViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF3C272429CF81CC005DBDA1 /* FFScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFScoreViewController.swift; sourceTree = "<group>"; };
 		AF514F9229C6665C009EF16D /* FindTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF514F9529C6665C009EF16D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF514F9729C6665C009EF16D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				AF514F9929C6665C009EF16D /* FFViewController.swift */,
+				AF3C272429CF81CC005DBDA1 /* FFScoreViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF514FAF29C66D63009EF16D /* FFModel.swift in Sources */,
+				AF3C272529CF81CC005DBDA1 /* FFScoreViewController.swift in Sources */,
 				AF514FA029C6665C009EF16D /* FindTheFlag.xcdatamodeld in Sources */,
 				AF514F9A29C6665C009EF16D /* FFViewController.swift in Sources */,
 				AF514FB529C66F79009EF16D /* FFView.swift in Sources */,
