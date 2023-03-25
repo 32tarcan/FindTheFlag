@@ -20,8 +20,8 @@ class FFViewModelAPI {
     
     let flagAPI = "https://flag.herokuapp.com/country"
     
-    func fetchFlag() {
-        let urlString = "\(flagAPI)/\(ffModel.countryImage[0])"
+    public func fetchFlag() {
+        let urlString = "\(flagAPI)/\(ffModel.countryImage)"
         fetchJSON(from: urlString)
     }
     
