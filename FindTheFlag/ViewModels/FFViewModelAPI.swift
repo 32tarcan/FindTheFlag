@@ -18,10 +18,12 @@ class FFViewModelAPI {
     var delegate: FFViewModelDelegate?
     var ffModel = FFModel()
     
+    
     let flagAPI = "https://flag.herokuapp.com/country"
     
-    public func fetchFlag() {
-        let urlString = "\(flagAPI)/\(ffModel.countryImage)"
+    
+    public func fetchFlag(index: Int) {
+        let urlString = "\(flagAPI)/\(ffModel.countryImage[index])"
         fetchJSON(from: urlString)
     }
     

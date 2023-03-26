@@ -14,12 +14,12 @@ class FFViewController: UIViewController {
     var model = FFModel()
     
 
-    
+    var flagIndex = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemYellow
         ffView = FFView(frame: view.bounds, viewModel: viewModel)
         setUpView()
       
@@ -29,7 +29,8 @@ class FFViewController: UIViewController {
     func setUpView() {
         view.addSubview(ffView)
         viewModel.delegate = self
-        viewModel.fetchFlag()
+        viewModel.fetchFlag(index: flagIndex)
+        
         
         
         
@@ -46,6 +47,8 @@ extension FFViewController: FFViewModelDelegate {
                 if let data = try? Data(contentsOf: flagUrl), let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self.ffView.countryImageView.image = image
+                        self.ffView.activeFlagName = flags.flagName ?? ""
+                        self.ffView.initButtonNames(correctName: flags.flagName ?? "")
                     }
                 } else {
                     DispatchQueue.main.async {

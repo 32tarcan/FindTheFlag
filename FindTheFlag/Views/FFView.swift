@@ -11,15 +11,10 @@ import UIKit
 
 
 class FFView: UIView  {
+    
     let viewModel: FFViewModelAPI
     let viewController = FFViewController()
     var ffmodel: FFModel
-    var ffscore = FFScoreViewController()
-    
-    
-    
-    
-    
     
     
     
@@ -28,7 +23,7 @@ class FFView: UIView  {
     private lazy var countryButton1: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
         
-        button.setTitle(ffmodel.countryLabel.randomElement(), for: .normal)
+        
         button.backgroundColor = .systemBrown
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
@@ -43,7 +38,7 @@ class FFView: UIView  {
     private lazy var countryButton2: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
         
-        button.setTitle(ffmodel.countryLabel.randomElement(), for: .normal)
+        
         button.backgroundColor = .systemBrown
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
@@ -59,7 +54,7 @@ class FFView: UIView  {
     
     private lazy var countryButton3: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
-        button.setTitle(ffmodel.countryLabel.randomElement(), for: .normal)
+
         button.backgroundColor = .systemBrown
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
@@ -77,7 +72,7 @@ class FFView: UIView  {
     
     private lazy var countryButton4: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
-        button.setTitle(ffmodel.countryLabel.randomElement(), for: .normal)
+        
         button.backgroundColor = .systemBrown
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
@@ -91,18 +86,45 @@ class FFView: UIView  {
         return button
     }()
     
+    func initButtonNames(correctName:String) {
+        var randomNames: [String] = []
+        randomNames.append(correctName)
+        for _ in 0...2 {
+            let randomFlagNames:String = ffmodel.countryLabel.randomElement() ?? ""
+            
+            randomNames.append(randomFlagNames)
+            
+        }
+        
+        randomNames.shuffle()
+        countryButton1.setTitle(randomNames[0].uppercased(), for: .normal)
+        countryButton2.setTitle(randomNames[1].uppercased(), for: .normal)
+        countryButton3.setTitle(randomNames[2].uppercased(), for: .normal)
+        countryButton4.setTitle(randomNames[3].uppercased(), for: .normal)
+        print(randomNames)
+    }
+    
+    public var activeFlagName = ""
+    
     
     private var correctAnswerFound = false
     private var correctAnswer = Int.random(in: 1...4)
     
     
     @objc func buttonTapped(_ sender: UIButton) {
+        print(activeFlagName)
+        print(sender.titleLabel?.text)
         if correctAnswerFound == false {
-            if sender.tag == correctAnswer {
+            if sender.titleLabel?.text?.lowercased() == activeFlagName.lowercased() {
+                
                 scoreNum += 1
                 sender.backgroundColor = .systemGreen
                 correctAnswerFound = true
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                    self.viewController.flagIndex += 1
+                    self.viewModel.fetchFlag(index: self.viewController.flagIndex)
+                
                     self.resetGame()
                 })
             } else {
@@ -146,6 +168,7 @@ class FFView: UIView  {
         }
     }
     
+    
     private var score = 0
     private var remaining = 16
     var scoreNum: Int {
@@ -159,7 +182,16 @@ class FFView: UIView  {
             remainingLabel.text = "Remaining: \(remaining)"
             
             if remaining == 0 {
-                // Win ekranı açılsın!!
+                //Win
+//                DispatchQueue.main.async {
+//                    let alert = UIAlertController(title: "Oyun Bitti!", message: "\(self.score):\(self.remaining)", preferredStyle: .alert)
+//                    let okAction = UIAlertAction(title: "Süper!", style: .default, handler: nil)
+//                    alert.addAction(okAction)
+//                    
+//                    
+//                }
+               
+                
             }
         }
     }
@@ -168,7 +200,7 @@ class FFView: UIView  {
         let remainingLabel = UILabel()
         remainingLabel.text = "Remaining:16"
         remainingLabel.textColor = .black
-        remainingLabel.font = UIFont(name: "Chalkduster", size: 16)
+        remainingLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 19)
         remainingLabel.translatesAutoresizingMaskIntoConstraints = false
         return remainingLabel
     }()
@@ -178,7 +210,7 @@ class FFView: UIView  {
         let scoreLabel = UILabel()
         scoreLabel.text = "Score:0"
         scoreLabel.textColor = .black
-        scoreLabel.font = UIFont(name: "Chalkduster", size: 19)
+        scoreLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 19)
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         return scoreLabel
     }()
