@@ -8,14 +8,11 @@
 import UIKit
 
 
-class FFScoreViewController {
-    
-        
-        
-        
-        
-      
-        
+
+class FFScoreViewController: UIViewController {
+   
+
+   
     
     
 }
