@@ -13,13 +13,13 @@ import UIKit
 class FFView: UIView  {
     
     let viewModel: FFViewModelAPI
-    let viewController = FFViewController()
+    let viewController = FFGameViewController()
     var ffmodel: FFModel
     
     
     
     
-    
+    //MARK: -Buttons
     private lazy var countryButton1: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
         
@@ -86,34 +86,40 @@ class FFView: UIView  {
         return button
     }()
     
-    func initButtonNames(correctName:String) {
+    //MARK: - Flag And Label Logic
+    func initButtonNames(correctName: String) {
         var randomNames: [String] = []
         randomNames.append(correctName)
-        for _ in 0...2 {
-            let randomFlagNames:String = ffmodel.countryLabel.randomElement() ?? ""
-            
-            randomNames.append(randomFlagNames)
-            
-        }
+
         
+        var usedNames = Set<String>()
+        usedNames.insert(correctName)
+
+        while randomNames.count < 4 {
+            let randomFlagName = ffmodel.countryLabel.randomElement() ?? ""
+
+            
+            if !usedNames.contains(randomFlagName) {
+                randomNames.append(randomFlagName)
+                usedNames.insert(randomFlagName)
+            }
+        }
+
         randomNames.shuffle()
         countryButton1.setTitle(randomNames[0].uppercased(), for: .normal)
         countryButton2.setTitle(randomNames[1].uppercased(), for: .normal)
         countryButton3.setTitle(randomNames[2].uppercased(), for: .normal)
         countryButton4.setTitle(randomNames[3].uppercased(), for: .normal)
-        print(randomNames)
     }
     
+   
     public var activeFlagName = ""
-    
-    
     private var correctAnswerFound = false
     private var correctAnswer = Int.random(in: 1...4)
     
     
     @objc func buttonTapped(_ sender: UIButton) {
-        print(activeFlagName)
-        print(sender.titleLabel?.text)
+        
         if correctAnswerFound == false {
             if sender.titleLabel?.text?.lowercased() == activeFlagName.lowercased() {
                 
@@ -121,15 +127,21 @@ class FFView: UIView  {
                 sender.backgroundColor = .systemGreen
                 correctAnswerFound = true
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(2)), execute: {
                     self.viewController.flagIndex += 1
                     self.viewModel.fetchFlag(index: self.viewController.flagIndex)
                 
                     self.resetGame()
+                    
                 })
+                
             } else {
                 sender.backgroundColor = .systemRed
             }
+           sender.isEnabled = false
+            print(activeFlagName)
+            print(sender.titleLabel?.text)
+            
         }
     }
     
@@ -140,8 +152,11 @@ class FFView: UIView  {
         countryButton2.backgroundColor = .darkGray
         countryButton3.backgroundColor = .darkGray
         countryButton4.backgroundColor = .darkGray
-        updateButtonTitles()
         scoreLabel.text = "Score: \(score)"
+        countryButton1.isEnabled = true
+        countryButton2.isEnabled = true
+        countryButton3.isEnabled = true
+        countryButton4.isEnabled = true
     }
     
     func updateButtonTitles() {
@@ -183,19 +198,15 @@ class FFView: UIView  {
             
             if remaining == 0 {
                 //Win
-//                DispatchQueue.main.async {
-//                    let alert = UIAlertController(title: "Oyun Bitti!", message: "\(self.score):\(self.remaining)", preferredStyle: .alert)
-//                    let okAction = UIAlertAction(title: "Süper!", style: .default, handler: nil)
-//                    alert.addAction(okAction)
-//                    
-//                    
-//                }
+
                
                 
             }
         }
     }
     
+    
+    //MARK: - Label and Image
     let remainingLabel: UILabel = {
         let remainingLabel = UILabel()
         remainingLabel.text = "Remaining:16"
@@ -219,9 +230,14 @@ class FFView: UIView  {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    
+    
+   
     
     
     
@@ -250,8 +266,10 @@ class FFView: UIView  {
         
         
         
+        
+        
     }
-    
+    //MARK: - All Constraints
     private func addConstraints() {
         NSLayoutConstraint.activate([
             // Button 1
@@ -294,17 +312,12 @@ class FFView: UIView  {
             
             // Remaining Label
             remainingLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
-            remainingLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15)
+            remainingLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15),
             
-            // Bayrağın üzerinde durmasını istiyorsan sor!
-            //scoreLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            //scoreLabel.bottomAnchor.constraint(equalTo: countryImageView.topAnchor, constant: -30)
-            
-            
-            
+
         ])
         
-        
+    
         
     }
     

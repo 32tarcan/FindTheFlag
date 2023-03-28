@@ -21,11 +21,11 @@ class FFModel: Codable {
          "japan",
          "canada",
          "brazil",
-         "argentina",
+        // "argentina",
          "india",
          "russia",
          "australia",
-         "southAfrica"
+        // "southAfrica"
                         
                         
     ]
@@ -43,11 +43,11 @@ class FFModel: Codable {
         "japan",
         "canada",
         "brazil",
-        "argentina",
+        //"argentina",
         "india",
         "russia",
         "australia",
-        "southAfrica"
+    //    "southAfrica"
     ]
     
     
