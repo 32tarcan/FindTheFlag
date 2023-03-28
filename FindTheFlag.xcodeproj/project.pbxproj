@@ -7,33 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF3C272529CF81CC005DBDA1 /* FFScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C272429CF81CC005DBDA1 /* FFScoreViewController.swift */; };
 		AF514F9629C6665C009EF16D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9529C6665C009EF16D /* AppDelegate.swift */; };
 		AF514F9829C6665C009EF16D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9729C6665C009EF16D /* SceneDelegate.swift */; };
-		AF514F9A29C6665C009EF16D /* FFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9929C6665C009EF16D /* FFViewController.swift */; };
+		AF514F9A29C6665C009EF16D /* FFGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9929C6665C009EF16D /* FFGameViewController.swift */; };
 		AF514FA029C6665C009EF16D /* FindTheFlag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9E29C6665C009EF16D /* FindTheFlag.xcdatamodeld */; };
-		AF514FA229C6665E009EF16D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF514FA129C6665E009EF16D /* Assets.xcassets */; };
 		AF514FA529C6665E009EF16D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF514FA329C6665E009EF16D /* LaunchScreen.storyboard */; };
 		AF514FAF29C66D63009EF16D /* FFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514FAE29C66D63009EF16D /* FFModel.swift */; };
 		AF514FB229C66E80009EF16D /* FFViewModelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514FB129C66E80009EF16D /* FFViewModelAPI.swift */; };
 		AF514FB529C66F79009EF16D /* FFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514FB429C66F79009EF16D /* FFView.swift */; };
 		AFEE6E2929CDDAF100459921 /* FlagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE6E2829CDDAF100459921 /* FlagData.swift */; };
+		AFF1052929D35E920048877E /* FFSettingsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1052829D35E920048877E /* FFSettingsViewViewModel.swift */; };
+		AFF1052B29D35EBE0048877E /* FFSettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1052A29D35EBE0048877E /* FFSettingsCellViewModel.swift */; };
+		AFF1052D29D35EDB0048877E /* FFSettingsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1052C29D35EDB0048877E /* FFSettingsOption.swift */; };
+		AFF1052F29D35F3C0048877E /* FFSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1052E29D35F3C0048877E /* FFSettingsView.swift */; };
+		AFF1053129D35F950048877E /* FFSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1053029D35F950048877E /* FFSettingsViewController.swift */; };
+		AFF1056329D36E790048877E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFF1056229D36E790048877E /* Assets.xcassets */; };
+		AFF1056529D398090048877E /* FFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1056429D398090048877E /* FFHomeViewController.swift */; };
+		AFF1056729D3A04A0048877E /* FFHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1056629D3A04A0048877E /* FFHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AF3C272429CF81CC005DBDA1 /* FFScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFScoreViewController.swift; sourceTree = "<group>"; };
 		AF514F9229C6665C009EF16D /* FindTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF514F9529C6665C009EF16D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF514F9729C6665C009EF16D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF514F9929C6665C009EF16D /* FFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFViewController.swift; sourceTree = "<group>"; };
+		AF514F9929C6665C009EF16D /* FFGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFGameViewController.swift; sourceTree = "<group>"; };
 		AF514F9F29C6665C009EF16D /* FindTheFlag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FindTheFlag.xcdatamodel; sourceTree = "<group>"; };
-		AF514FA129C6665E009EF16D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF514FA429C6665E009EF16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF514FA629C6665E009EF16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF514FAE29C66D63009EF16D /* FFModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFModel.swift; sourceTree = "<group>"; };
 		AF514FB129C66E80009EF16D /* FFViewModelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFViewModelAPI.swift; sourceTree = "<group>"; };
 		AF514FB429C66F79009EF16D /* FFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFView.swift; sourceTree = "<group>"; };
 		AFEE6E2829CDDAF100459921 /* FlagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagData.swift; sourceTree = "<group>"; };
+		AFF1052829D35E920048877E /* FFSettingsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsViewViewModel.swift; sourceTree = "<group>"; };
+		AFF1052A29D35EBE0048877E /* FFSettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsCellViewModel.swift; sourceTree = "<group>"; };
+		AFF1052C29D35EDB0048877E /* FFSettingsOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsOption.swift; sourceTree = "<group>"; };
+		AFF1052E29D35F3C0048877E /* FFSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsView.swift; sourceTree = "<group>"; };
+		AFF1053029D35F950048877E /* FFSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsViewController.swift; sourceTree = "<group>"; };
+		AFF1056229D36E790048877E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFF1056429D398090048877E /* FFHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFHomeViewController.swift; sourceTree = "<group>"; };
+		AFF1056629D3A04A0048877E /* FFHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +92,7 @@
 		AF514FAC29C66CD5009EF16D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AF514FA129C6665E009EF16D /* Assets.xcassets */,
+				AFF1056229D36E790048877E /* Assets.xcassets */,
 				AF514F9529C6665C009EF16D /* AppDelegate.swift */,
 				AF514F9729C6665C009EF16D /* SceneDelegate.swift */,
 				AF514FA329C6665E009EF16D /* LaunchScreen.storyboard */,
@@ -91,8 +103,9 @@
 		AF514FAD29C66D01009EF16D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AF514F9929C6665C009EF16D /* FFViewController.swift */,
-				AF3C272429CF81CC005DBDA1 /* FFScoreViewController.swift */,
+				AF514F9929C6665C009EF16D /* FFGameViewController.swift */,
+				AFF1053029D35F950048877E /* FFSettingsViewController.swift */,
+				AFF1056429D398090048877E /* FFHomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -108,8 +121,8 @@
 		AF514FB329C66E86009EF16D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				AF514FB129C66E80009EF16D /* FFViewModelAPI.swift */,
-				AFEE6E2829CDDAF100459921 /* FlagData.swift */,
+				AFF1055A29D36AE10048877E /* Flag */,
+				AFF1055929D369CD0048877E /* Settings */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -118,8 +131,29 @@
 			isa = PBXGroup;
 			children = (
 				AF514FB429C66F79009EF16D /* FFView.swift */,
+				AFF1052E29D35F3C0048877E /* FFSettingsView.swift */,
+				AFF1056629D3A04A0048877E /* FFHomeView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AFF1055929D369CD0048877E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AFF1052829D35E920048877E /* FFSettingsViewViewModel.swift */,
+				AFF1052A29D35EBE0048877E /* FFSettingsCellViewModel.swift */,
+				AFF1052C29D35EDB0048877E /* FFSettingsOption.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		AFF1055A29D36AE10048877E /* Flag */ = {
+			isa = PBXGroup;
+			children = (
+				AF514FB129C66E80009EF16D /* FFViewModelAPI.swift */,
+				AFEE6E2829CDDAF100459921 /* FlagData.swift */,
+			);
+			path = Flag;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +214,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF1056329D36E790048877E /* Assets.xcassets in Resources */,
 				AF514FA529C6665E009EF16D /* LaunchScreen.storyboard in Resources */,
-				AF514FA229C6665E009EF16D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,12 +226,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF1052B29D35EBE0048877E /* FFSettingsCellViewModel.swift in Sources */,
 				AF514FAF29C66D63009EF16D /* FFModel.swift in Sources */,
-				AF3C272529CF81CC005DBDA1 /* FFScoreViewController.swift in Sources */,
+				AFF1052D29D35EDB0048877E /* FFSettingsOption.swift in Sources */,
 				AF514FA029C6665C009EF16D /* FindTheFlag.xcdatamodeld in Sources */,
-				AF514F9A29C6665C009EF16D /* FFViewController.swift in Sources */,
+				AF514F9A29C6665C009EF16D /* FFGameViewController.swift in Sources */,
+				AFF1052929D35E920048877E /* FFSettingsViewViewModel.swift in Sources */,
 				AF514FB529C66F79009EF16D /* FFView.swift in Sources */,
 				AF514F9629C6665C009EF16D /* AppDelegate.swift in Sources */,
+				AFF1056729D3A04A0048877E /* FFHomeView.swift in Sources */,
+				AFF1056529D398090048877E /* FFHomeViewController.swift in Sources */,
+				AFF1053129D35F950048877E /* FFSettingsViewController.swift in Sources */,
+				AFF1052F29D35F3C0048877E /* FFSettingsView.swift in Sources */,
 				AFEE6E2929CDDAF100459921 /* FlagData.swift in Sources */,
 				AF514FB229C66E80009EF16D /* FFViewModelAPI.swift in Sources */,
 				AF514F9829C6665C009EF16D /* SceneDelegate.swift in Sources */,
