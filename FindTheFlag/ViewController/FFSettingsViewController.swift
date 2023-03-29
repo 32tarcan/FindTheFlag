@@ -22,7 +22,37 @@ class FFSettingsViewController: UIViewController {
             view.backgroundColor = .systemBackground
             title = "Settings"
             addSwiftUIController()
+            
+            
+            let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44))
+            navBar.backgroundColor = .white
+            navBar.isTranslucent = false
+            navBar.tintColor = .systemYellow
+            
+            let navItem = UINavigationItem(title: "Settings")
+                    navBar.setItems([navItem], animated: false)
+                    view.addSubview(navBar)
+            
+            let backButton = UIBarButtonItem(title: "Geri", style: .plain, target: self, action: #selector(goBack))
+                    navItem.leftBarButtonItem = backButton
+                    
+                    
+                    navBar.translatesAutoresizingMaskIntoConstraints = false
+                    NSLayoutConstraint.activate([
+                        navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                        navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                        navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                        navBar.heightAnchor.constraint(equalToConstant: 44)
+                    ])
         }
+    
+    @objc func goBack() {
+        dismiss(animated: true) {
+            let homeVC = FFHomeViewController()
+            self.present(homeVC, animated: true, completion: nil)
+        }
+        
+    }
    
     private func addSwiftUIController() {
         let settingsSwiftUIController = UIHostingController(
