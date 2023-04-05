@@ -220,7 +220,7 @@ class FFView: UIView  {
             score = newValue
             scoreLabel.text = "Score: \(score)"
             remaining -= 1
-            remainingLabel.text = "Remaining: \(remaining)"
+            remainingLabel.text = "13/\(remaining)"
             
           
 
@@ -233,7 +233,7 @@ class FFView: UIView  {
     //MARK: - Label and Image
     let remainingLabel: UILabel = {
         let remainingLabel = UILabel()
-        remainingLabel.text = "Remaining:13"
+        remainingLabel.text = "13/13"
         remainingLabel.textColor = .black
         remainingLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 19)
         remainingLabel.translatesAutoresizingMaskIntoConstraints = false
