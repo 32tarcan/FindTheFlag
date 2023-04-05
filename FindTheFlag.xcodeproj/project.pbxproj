@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF3B15E029DDD57200ACDC2B /* FFWinScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B15DF29DDD57200ACDC2B /* FFWinScreenViewController.swift */; };
 		AF46483F29D9CD4700C8BF1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF46483E29D9CD4700C8BF1B /* Assets.xcassets */; };
 		AF514F9629C6665C009EF16D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9529C6665C009EF16D /* AppDelegate.swift */; };
 		AF514F9829C6665C009EF16D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9729C6665C009EF16D /* SceneDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF3B15DF29DDD57200ACDC2B /* FFWinScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFWinScreenViewController.swift; sourceTree = "<group>"; };
 		AF46483E29D9CD4700C8BF1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF514F9229C6665C009EF16D /* FindTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF514F9529C6665C009EF16D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				AF514F9929C6665C009EF16D /* FFGameViewController.swift */,
 				AFF1053029D35F950048877E /* FFSettingsViewController.swift */,
 				AFF1056429D398090048877E /* FFHomeViewController.swift */,
+				AF3B15DF29DDD57200ACDC2B /* FFWinScreenViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				AFF1052B29D35EBE0048877E /* FFSettingsCellViewModel.swift in Sources */,
 				AF514FAF29C66D63009EF16D /* FFModel.swift in Sources */,
 				AFF1052D29D35EDB0048877E /* FFSettingsOption.swift in Sources */,
+				AF3B15E029DDD57200ACDC2B /* FFWinScreenViewController.swift in Sources */,
 				AF514FA029C6665C009EF16D /* FindTheFlag.xcdatamodeld in Sources */,
 				AF514F9A29C6665C009EF16D /* FFGameViewController.swift in Sources */,
 				AFF1052929D35E920048877E /* FFSettingsViewViewModel.swift in Sources */,
