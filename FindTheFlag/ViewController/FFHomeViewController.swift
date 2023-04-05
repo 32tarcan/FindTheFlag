@@ -96,13 +96,14 @@ class FFHomeViewController: UIViewController {
         gameVC.modalPresentationStyle = .fullScreen
         present(gameVC, animated: true, completion: nil)
     }
-    
+
     @objc func settingsButtonTapped() {
         dismiss(animated: true, completion: nil)
         let settingsVC = FFSettingsViewController()
         settingsVC.modalPresentationStyle = .fullScreen
         present(settingsVC, animated: true, completion: nil)
     }
+
     
     
 }

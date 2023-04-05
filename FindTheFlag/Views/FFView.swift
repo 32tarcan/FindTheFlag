@@ -22,6 +22,7 @@ class FFView: UIView  {
     
     
     
+    
     //MARK: -Buttons
     private lazy var countryButton1: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
@@ -120,8 +121,12 @@ class FFView: UIView  {
     private var correctAnswerFound = false
     private var correctAnswer = Int.random(in: 1...4)
     private var incorrectAnswers = [String]()
+    
+    private var remainingLives = 3
+    private var gameLost = false
 
 
+    
     @objc func buttonTapped(_ sender: UIButton) {
         if correctAnswerFound == false {
             if sender.titleLabel?.text?.lowercased() == activeFlagName.lowercased() {
@@ -137,10 +142,15 @@ class FFView: UIView  {
                     self.resetGame()
                 }
             } else {
-                
-                
-                
                 sender.backgroundColor = .systemRed
+                
+                
+                remainingLives -= 1
+                if remainingLives == 0 {
+                    gameLost = true
+                    FFGameViewController.sharedInstance?.restartGame()
+                }
+                
                 
                 heartImage1.translatesAutoresizingMaskIntoConstraints = true
                 heartImage2.translatesAutoresizingMaskIntoConstraints = true
@@ -166,6 +176,9 @@ class FFView: UIView  {
            
         }
     }
+
+    
+   
     
     
 
@@ -217,7 +230,7 @@ class FFView: UIView  {
             didSet {
                 remainingLabel.text = "14/\(remaining)"
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                    if self.remaining == 13 {
+                    if self.remaining == 12 {
                         if let viewController = self.superview?.next as? UIViewController {
                             let winScreenVC = FFWinScreenViewController()
                             winScreenVC.modalPresentationStyle = .fullScreen
@@ -282,7 +295,7 @@ class FFView: UIView  {
     
     
     
-    let heartImage1: UIImageView = {
+    var heartImage1: UIImageView = {
         let heartImage1 = UIImageView()
         heartImage1.image = UIImage(named: "heart.png")?.withRenderingMode(.alwaysOriginal)
         heartImage1.translatesAutoresizingMaskIntoConstraints = false
@@ -292,7 +305,7 @@ class FFView: UIView  {
     
 
 
-        let heartImage2: UIImageView = {
+        var heartImage2: UIImageView = {
             let heartImage2 = UIImageView()
             heartImage2.image = UIImage(named: "heart.png")?.withRenderingMode(.alwaysOriginal)
             heartImage2.translatesAutoresizingMaskIntoConstraints = false
@@ -301,7 +314,7 @@ class FFView: UIView  {
     
 
 
-         let heartImage3: UIImageView = {
+         var heartImage3: UIImageView = {
                 let heartImage3 = UIImageView()
                 heartImage3.image = UIImage(named: "heart.png")?.withRenderingMode(.alwaysOriginal)
                 heartImage3.translatesAutoresizingMaskIntoConstraints = false
