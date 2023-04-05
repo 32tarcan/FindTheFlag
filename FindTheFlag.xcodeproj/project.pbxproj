@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF46483F29D9CD4700C8BF1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF46483E29D9CD4700C8BF1B /* Assets.xcassets */; };
 		AF514F9629C6665C009EF16D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9529C6665C009EF16D /* AppDelegate.swift */; };
 		AF514F9829C6665C009EF16D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9729C6665C009EF16D /* SceneDelegate.swift */; };
 		AF514F9A29C6665C009EF16D /* FFGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF514F9929C6665C009EF16D /* FFGameViewController.swift */; };
@@ -21,12 +22,12 @@
 		AFF1052D29D35EDB0048877E /* FFSettingsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1052C29D35EDB0048877E /* FFSettingsOption.swift */; };
 		AFF1052F29D35F3C0048877E /* FFSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1052E29D35F3C0048877E /* FFSettingsView.swift */; };
 		AFF1053129D35F950048877E /* FFSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1053029D35F950048877E /* FFSettingsViewController.swift */; };
-		AFF1056329D36E790048877E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFF1056229D36E790048877E /* Assets.xcassets */; };
 		AFF1056529D398090048877E /* FFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1056429D398090048877E /* FFHomeViewController.swift */; };
 		AFF1056729D3A04A0048877E /* FFHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1056629D3A04A0048877E /* FFHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF46483E29D9CD4700C8BF1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF514F9229C6665C009EF16D /* FindTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF514F9529C6665C009EF16D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF514F9729C6665C009EF16D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		AFF1052C29D35EDB0048877E /* FFSettingsOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsOption.swift; sourceTree = "<group>"; };
 		AFF1052E29D35F3C0048877E /* FFSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsView.swift; sourceTree = "<group>"; };
 		AFF1053029D35F950048877E /* FFSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFSettingsViewController.swift; sourceTree = "<group>"; };
-		AFF1056229D36E790048877E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFF1056429D398090048877E /* FFHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFHomeViewController.swift; sourceTree = "<group>"; };
 		AFF1056629D3A04A0048877E /* FFHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,7 +92,7 @@
 		AF514FAC29C66CD5009EF16D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AFF1056229D36E790048877E /* Assets.xcassets */,
+				AF46483E29D9CD4700C8BF1B /* Assets.xcassets */,
 				AF514F9529C6665C009EF16D /* AppDelegate.swift */,
 				AF514F9729C6665C009EF16D /* SceneDelegate.swift */,
 				AF514FA329C6665E009EF16D /* LaunchScreen.storyboard */,
@@ -214,7 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFF1056329D36E790048877E /* Assets.xcassets in Resources */,
+				AF46483F29D9CD4700C8BF1B /* Assets.xcassets in Resources */,
 				AF514FA529C6665E009EF16D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
