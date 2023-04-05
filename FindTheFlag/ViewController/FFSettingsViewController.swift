@@ -42,7 +42,7 @@ class FFSettingsViewController: UIViewController {
                         navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
                         navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                         navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                        navBar.heightAnchor.constraint(equalToConstant: 44)
+                        navBar.heightAnchor.constraint(equalToConstant: 40)
                     ])
         }
     
@@ -76,10 +76,11 @@ class FFSettingsViewController: UIViewController {
         settingsSwiftUIController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            settingsSwiftUIController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            settingsSwiftUIController.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             settingsSwiftUIController.view.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             settingsSwiftUIController.view.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            settingsSwiftUIController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            settingsSwiftUIController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+
         
         ])
         

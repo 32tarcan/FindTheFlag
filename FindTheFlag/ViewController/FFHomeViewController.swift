@@ -37,7 +37,7 @@ class FFHomeViewController: UIViewController {
         settingsButton.layer.cornerRadius = 17
         settingsButton.setTitle("Ayarlar", for: .normal)
         settingsButton.setImage(UIImage(named: "gearshape.fill"), for: .normal)
-        settingsButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+        
         
         settingsButton.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
