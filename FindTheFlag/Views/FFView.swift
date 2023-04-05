@@ -14,7 +14,8 @@ class FFView: UIView  {
     
     let viewModel: FFViewModelAPI
     let viewController = FFGameViewController()
-    var ffmodel: FFModel
+    let ffmodel: FFModel
+    let ffGame = FFGameViewController()
     
     
     
@@ -24,7 +25,7 @@ class FFView: UIView  {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
         
         
-        button.backgroundColor = .systemBrown
+        button.backgroundColor = .darkGray
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +40,7 @@ class FFView: UIView  {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
         
         
-        button.backgroundColor = .systemBrown
+        button.backgroundColor = .darkGray
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +56,7 @@ class FFView: UIView  {
     private lazy var countryButton3: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
 
-        button.backgroundColor = .systemBrown
+        button.backgroundColor = .darkGray
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +74,7 @@ class FFView: UIView  {
     private lazy var countryButton4: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
         
-        button.backgroundColor = .systemBrown
+        button.backgroundColor = .darkGray
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10.0
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -116,35 +117,56 @@ class FFView: UIView  {
     public var activeFlagName = ""
     private var correctAnswerFound = false
     private var correctAnswer = Int.random(in: 1...4)
-    
-    
+    private var incorrectAnswers = [String]()
+
+
     @objc func buttonTapped(_ sender: UIButton) {
-        
         if correctAnswerFound == false {
             if sender.titleLabel?.text?.lowercased() == activeFlagName.lowercased() {
-                
                 scoreNum += 1
                 sender.backgroundColor = .systemGreen
+                
                 correctAnswerFound = true
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(Int(2)), execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                    sender.backgroundColor = .darkGray
                     self.viewController.flagIndex += 1
                     self.viewModel.fetchFlag(index: self.viewController.flagIndex)
-                
                     self.resetGame()
-                    
-                })
-                
+                }
             } else {
+                
+                
+                
                 sender.backgroundColor = .systemRed
-            }
-           sender.isEnabled = false
-            print(activeFlagName)
-            print(sender.titleLabel?.text)
-            
+                
+                heartImage1.translatesAutoresizingMaskIntoConstraints = true
+                heartImage2.translatesAutoresizingMaskIntoConstraints = true
+                heartImage3.translatesAutoresizingMaskIntoConstraints = true
+
+                if heartImage1.superview != nil {
+                                heartImage1.removeFromSuperview()
+                            } else if heartImage2.superview != nil {
+                                heartImage2.removeFromSuperview()
+                            } else if heartImage3.superview != nil {
+                                heartImage3.removeFromSuperview()
+                            }
+                sender.isEnabled = false
+                
+               
+                    incorrectAnswers.append(activeFlagName)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                        sender.backgroundColor = .darkGray
+                        sender.isEnabled = true
+                    }
+                }
+           
         }
     }
     
+    
+
     func resetGame() {
         correctAnswer = Int.random(in: 1...4)
         correctAnswerFound = false
@@ -159,6 +181,10 @@ class FFView: UIView  {
         countryButton4.isEnabled = true
     }
     
+    
+
+    
+
     func updateButtonTitles() {
         var buttonTitles = ffmodel.countryLabel
         buttonTitles.shuffle()
@@ -182,10 +208,10 @@ class FFView: UIView  {
             break
         }
     }
-    
-    
+
+
     private var score = 0
-    private var remaining = 16
+    private var remaining = 13
     var scoreNum: Int {
         get {
             return score
@@ -196,20 +222,18 @@ class FFView: UIView  {
             remaining -= 1
             remainingLabel.text = "Remaining: \(remaining)"
             
-            if remaining == 0 {
-                //Win
+          
 
-               
-                
-            }
         }
     }
+
+
     
     
     //MARK: - Label and Image
     let remainingLabel: UILabel = {
         let remainingLabel = UILabel()
-        remainingLabel.text = "Remaining:16"
+        remainingLabel.text = "Remaining:13"
         remainingLabel.textColor = .black
         remainingLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 19)
         remainingLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -237,7 +261,47 @@ class FFView: UIView  {
     
     
     
+    
+    
+    
+    let heartImage1: UIImageView = {
+        let heartImage1 = UIImageView()
+        heartImage1.image = UIImage(named: "heart.png")?.withRenderingMode(.alwaysOriginal)
+        heartImage1.translatesAutoresizingMaskIntoConstraints = false
+       return heartImage1
+    }()
+    
+    
+
+
+        let heartImage2: UIImageView = {
+            let heartImage2 = UIImageView()
+            heartImage2.image = UIImage(named: "heart.png")?.withRenderingMode(.alwaysOriginal)
+            heartImage2.translatesAutoresizingMaskIntoConstraints = false
+            return heartImage2
+        }()
+    
+
+
+         let heartImage3: UIImageView = {
+                let heartImage3 = UIImageView()
+                heartImage3.image = UIImage(named: "heart.png")?.withRenderingMode(.alwaysOriginal)
+                heartImage3.translatesAutoresizingMaskIntoConstraints = false
+                return heartImage3
+            }()
+
+    
+
    
+    
+    
+
+    
+
+
+
+    
+    
     
     
     
@@ -263,6 +327,9 @@ class FFView: UIView  {
         addSubview(countryImageView)
         addSubview(scoreLabel)
         addSubview(remainingLabel)
+        addSubview(heartImage1)
+        addSubview(heartImage2)
+        addSubview(heartImage3)
         
         
         
@@ -313,6 +380,22 @@ class FFView: UIView  {
             // Remaining Label
             remainingLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             remainingLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15),
+            
+            // Heart Images
+            heartImage1.widthAnchor.constraint(equalToConstant: 25),
+            heartImage1.heightAnchor.constraint(equalToConstant: 25),
+            heartImage1.centerYAnchor.constraint(equalTo: scoreLabel.centerYAnchor),
+            heartImage1.trailingAnchor.constraint(equalTo: heartImage2.leadingAnchor, constant: -10),
+
+            heartImage2.widthAnchor.constraint(equalToConstant: 25),
+            heartImage2.heightAnchor.constraint(equalToConstant: 25),
+            heartImage2.centerYAnchor.constraint(equalTo:scoreLabel.centerYAnchor),
+            heartImage2.centerXAnchor.constraint(equalTo:centerXAnchor),
+
+            heartImage3.widthAnchor.constraint(equalToConstant: 25),
+            heartImage3.heightAnchor.constraint(equalToConstant: 25),
+            heartImage3.centerYAnchor.constraint(equalTo:scoreLabel.centerYAnchor),
+            heartImage3.leadingAnchor.constraint(equalTo: heartImage2.trailingAnchor, constant: 10),
             
 
         ])
