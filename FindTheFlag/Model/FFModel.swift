@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class FFModel: Codable {
     
     var countryLabel = [
@@ -26,25 +27,23 @@ class FFModel: Codable {
         "russia",
         "australia",
     //    "southAfrica"
-        "Afganistan",
-        "AlandIslands",
-        "Albania",
-        "Greece",
-        "Brundi",
-        "Norway",
-        "Egypt",
-        "Pamnamaa",
-        "Hungary",
-        "Georgia",
-        "Anguilla",
-        "Cuba",
-        "Honduras",
-        "Guam",
-        "Antarctica",
-        "Algeria",
-        "Bangladesh",
-        "Curaçao",
-        "Cyprus"
+        "afganistan",
+        "alandIslands",
+        "albania",
+        "greece",
+        "brundi",
+        "egypt",
+        "pamnamaa",
+        "anguilla",
+        "cuba",
+        "honduras",
+        "guam",
+        "greece",
+        "curaçao",
+        "cyprus",
+        "dominika",
+        "fas",
+        "kosova"
                         
                         
     ]
@@ -67,26 +66,28 @@ class FFModel: Codable {
         "russia",
         "australia",
     //    "southAfrica"
-        "Afganistan",
-        "AlandIslands",
-        "Albania",
-        "Greece",
-        "Brundi",
-        "Norway",
-        "Egypt",
-        "Pamnamaa",
-        "Hungary",
-        "Georgia",
-        "Anguilla",
-        "Cuba",
-        "Honduras",
-        "Guam",
-        "Antarctica",
-        "Algeria",
-        "Bangladesh",
-        "Curaçao",
-        "Cyprus"
+        "afganistan",
+        "alandIslands",
+        "albania",
+        "greece",
+        "brundi",
+        "egypt",
+        "pamnamaa",
+        "anguilla",
+        "cuba",
+        "honduras",
+        "guam",
+        "greece",
+        "curaçao",
+        "cyprus",
+        "dominika",
+        "fas",
+        "kosova"
     ]
     
     
 }
+
+
+
+
