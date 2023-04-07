@@ -148,7 +148,9 @@ class FFView: UIView  {
                 remainingLives -= 1
                 if remainingLives == 0 {
                     gameLost = true
-                    FFGameViewController.sharedInstance?.restartGame()
+                  FFGameViewController.sharedInstance?.restartGame()
+                    
+
                 }
                 
                 
@@ -226,11 +228,11 @@ class FFView: UIView  {
 
 
     private var score = 0
-    private var remaining = 14 {
+    private var remaining = 27 {
             didSet {
-                remainingLabel.text = "14/\(remaining)"
+                remainingLabel.text = "27/\(remaining)"
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                    if self.remaining == 12 {
+                    if self.remaining == 0 {
                         if let viewController = self.superview?.next as? UIViewController {
                             let winScreenVC = FFWinScreenViewController()
                             winScreenVC.modalPresentationStyle = .fullScreen
@@ -264,7 +266,7 @@ class FFView: UIView  {
     //MARK: - Label and Image
     let remainingLabel: UILabel = {
         let remainingLabel = UILabel()
-        remainingLabel.text = "14/14"
+        remainingLabel.text = "27/27"
         remainingLabel.textColor = .black
         remainingLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 19)
         remainingLabel.translatesAutoresizingMaskIntoConstraints = false
