@@ -6,20 +6,24 @@
 //
 
 import UIKit
+import CoreMotion
+import AudioToolbox
+
 
 
 
 class FFGameViewController: UIViewController {
-
+    
     let viewModel = FFViewModelAPI()
     var ffView: FFView!
     var model = FFModel()
     
     static var sharedInstance: FFGameViewController?
     
+    let motionManager = CMMotionManager()
     
-
     var flagIndex = 0
+    
     
     
     override func viewDidLoad() {
@@ -33,14 +37,8 @@ class FFGameViewController: UIViewController {
         
         
         
-        
-        
-        
-        
-        
-        
     }
-
+    
     func setUpView() {
         view.addSubview(ffView)
         viewModel.delegate = self
@@ -48,11 +46,24 @@ class FFGameViewController: UIViewController {
         restartGame()
         
         
+        
+        motionManager.startDeviceMotionUpdates(to: .main) { [weak self] motion, error in
+            if let acceleration = motion?.userAcceleration,
+               acceleration.x > 1.5 || acceleration.y > 1.5 || acceleration.z > 1.5 {
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            }
+        }
+        
+        
+        
+        
+        
+        
     }
     
     func restartGame() {
         let alert = UIAlertController(title: "Oyunu kaybettiniz", message: "Üzgünüm, 3 kere yanlış cevap verdiniz. Yeniden oynamak ister misiniz?", preferredStyle: .alert)
-            
+        
         alert.addAction(UIAlertAction(title: "Evet", style: .default, handler: { _ in
             self.dismiss(animated: true) {
                 let gameVC = FFGameViewController()
@@ -60,8 +71,8 @@ class FFGameViewController: UIViewController {
                 UIApplication.shared.windows.first?.rootViewController?.present(gameVC, animated: true, completion: nil)
             }
         }))
-
-
+        
+        
         alert.addAction(UIAlertAction(title: "Hayır", style: .default, handler: { _ in
             self.dismiss(animated: true) {
                 let homeVC = FFHomeViewController()
@@ -69,14 +80,22 @@ class FFGameViewController: UIViewController {
                 self.present(homeVC, animated: true, completion: nil)
             }
         }))
-            
-            present(alert, animated: true)
+        
+        present(alert, animated: true)
     }
+    
+    
+    
+    
+    
+}
+    
+    
 
 
     
 
-}
+
 
 extension FFHomeViewController {
     func presentGameViewController() {
