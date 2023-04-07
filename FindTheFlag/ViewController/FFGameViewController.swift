@@ -8,6 +8,7 @@
 import UIKit
 
 
+
 class FFGameViewController: UIViewController {
 
     let viewModel = FFViewModelAPI()
@@ -50,38 +51,27 @@ class FFGameViewController: UIViewController {
     }
     
     func restartGame() {
-        let appearance = SCLAlertView.SCLAppearance(
-            kTitleFont: UIFont.systemFont(ofSize: 20, weight: .bold),
-            kTextFont: UIFont.systemFont(ofSize: 16),
-            kButtonFont: UIFont.systemFont(ofSize: 16, weight: .bold),
-            showCloseButton: false
-        )
-        let alert = SCLAlertView(appearance: appearance)
-        
-        alert.addButton("Evet") {
+        let alert = UIAlertController(title: "Oyunu kaybettiniz", message: "Üzgünüm, 3 kere yanlış cevap verdiniz. Yeniden oynamak ister misiniz?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Evet", style: .default, handler: { _ in
             self.dismiss(animated: true) {
                 let homeVC = FFHomeViewController()
                 homeVC.modalPresentationStyle = .fullScreen
                 homeVC.presentGameViewController()
+                FFGameViewController.sharedInstance?.present(homeVC, animated: true, completion: nil)
             }
-        }
-        
-        alert.addButton("Hayır") {
+        }))
+        alert.addAction(UIAlertAction(title: "Hayır", style: .default, handler: { _ in
             self.dismiss(animated: true) {
                 let homeVC = FFHomeViewController()
                 homeVC.modalPresentationStyle = .fullScreen
                 self.present(homeVC, animated: true, completion: nil)
             }
-        }
-        
-        alert.showWarning("Oyunu kaybettiniz", subTitle: "Üzgünüm, 3 kere yanlış cevap verdiniz. Yeniden oynamak ister misiniz?")
+        }))
+
+        present(alert, animated: true)
     }
 
-
-
-   
-    
-    
 
     
 
