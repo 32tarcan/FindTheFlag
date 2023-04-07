@@ -28,18 +28,18 @@ class FFModel: Codable {
         "australia",
     //    "southAfrica"
         "afganistan",
-        "alandIslands",
+      //  "alandIslands",
         "albania",
         "greece",
         "brundi",
         "egypt",
         "pamnamaa",
-        "anguilla",
-        "cuba",
+       // "anguilla",
+    //    "cuba",
         "honduras",
         "guam",
         "greece",
-        "curaçao",
+      //  "curaçao",
         "cyprus",
         "dominika",
         "fas",
@@ -67,14 +67,14 @@ class FFModel: Codable {
         "australia",
     //    "southAfrica"
         "afganistan",
-        "alandIslands",
+       // "alandIslands",
         "albania",
         "greece",
         "brundi",
         "egypt",
         "pamnamaa",
-        "anguilla",
-        "cuba",
+      //  "anguilla",
+   //     "cuba",
         "honduras",
         "guam",
         "greece",
@@ -87,6 +87,7 @@ class FFModel: Codable {
     
     
 }
+
 
 
 
