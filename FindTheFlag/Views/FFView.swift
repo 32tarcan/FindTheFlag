@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import CoreMotion
+import AudioToolbox
+
+
 
 
 
@@ -133,16 +137,24 @@ class FFView: UIView  {
                 scoreNum += 1
                 sender.backgroundColor = .systemGreen
                 
+                
+                
                 correctAnswerFound = true
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [self] in
                     sender.backgroundColor = .darkGray
                     self.viewController.flagIndex += 1
                     self.viewModel.fetchFlag(index: self.viewController.flagIndex)
                     self.resetGame()
+                    
+                    
+                   
                 }
             } else {
                 sender.backgroundColor = .systemRed
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                 
                 
                 remainingLives -= 1
