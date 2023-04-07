@@ -52,15 +52,16 @@ class FFGameViewController: UIViewController {
     
     func restartGame() {
         let alert = UIAlertController(title: "Oyunu kaybettiniz", message: "Üzgünüm, 3 kere yanlış cevap verdiniz. Yeniden oynamak ister misiniz?", preferredStyle: .alert)
-
+            
         alert.addAction(UIAlertAction(title: "Evet", style: .default, handler: { _ in
             self.dismiss(animated: true) {
-                let homeVC = FFHomeViewController()
-                homeVC.modalPresentationStyle = .fullScreen
-                homeVC.presentGameViewController()
-                FFGameViewController.sharedInstance?.present(homeVC, animated: true, completion: nil)
+                let gameVC = FFGameViewController()
+                gameVC.modalPresentationStyle = .fullScreen
+                UIApplication.shared.windows.first?.rootViewController?.present(gameVC, animated: true, completion: nil)
             }
         }))
+
+
         alert.addAction(UIAlertAction(title: "Hayır", style: .default, handler: { _ in
             self.dismiss(animated: true) {
                 let homeVC = FFHomeViewController()
@@ -68,8 +69,8 @@ class FFGameViewController: UIViewController {
                 self.present(homeVC, animated: true, completion: nil)
             }
         }))
-
-        present(alert, animated: true)
+            
+            present(alert, animated: true)
     }
 
 
