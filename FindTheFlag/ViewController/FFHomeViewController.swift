@@ -25,7 +25,7 @@ class FFHomeViewController: UIViewController {
         view.addSubview(startButton)
         NSLayoutConstraint.activate([
             startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            startButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -70),
+            startButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
             startButton.widthAnchor.constraint(equalToConstant: 120),
             startButton.heightAnchor.constraint(equalToConstant: 40)
         ])
@@ -45,44 +45,57 @@ class FFHomeViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             settingsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            settingsButton.topAnchor.constraint(equalTo: startButton.bottomAnchor, constant: 10),
+            settingsButton.topAnchor.constraint(equalTo: startButton.bottomAnchor, constant: 30),
             settingsButton.widthAnchor.constraint(equalTo: startButton.widthAnchor),
             settingsButton.heightAnchor.constraint(equalTo: startButton.heightAnchor)
         ])
         
         
         
+        let homeLabel = UILabel()
+       homeLabel.text = "Find The Flag"
+       homeLabel.font = UIFont(name: "MarkerFelt-Wide", size: 56)
+       homeLabel.textColor = .white
+       homeLabel.layer.cornerRadius = 10
+        self.view.addSubview(homeLabel)
         
-        let homeImage = UIImageView()
-        homeImage.translatesAutoresizingMaskIntoConstraints = false
-        homeImage.contentMode = .scaleAspectFit
-        homeImage.image = UIImage(named: "homeScreenImage.jpg")
-        homeImage.alpha = 0.5
-
-        view.addSubview(homeImage)
+        homeLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            homeImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                homeImage.topAnchor.constraint(equalTo: view.topAnchor),
-                homeImage.widthAnchor.constraint(equalTo: view.widthAnchor),
-                homeImage.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 4/10),
-            homeImage.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -70)
+            homeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            homeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -260)
+        
         ])
+        
+        
+        
+
 
 
         
         let homeImage2 = UIImageView()
         homeImage2.translatesAutoresizingMaskIntoConstraints = false
         homeImage2.contentMode = .scaleAspectFill
-        homeImage2.alpha = 0.5
-        homeImage2.image = UIImage(named: "homeScreenImage2.jpg")
+        homeImage2.backgroundColor = UIColor.clear
+        homeImage2.image = UIImage(named: "flagImages.png")
+        homeImage2.alpha = 0.06
         
         view.addSubview(homeImage2)
         NSLayoutConstraint.activate([
             homeImage2.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                homeImage2.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                homeImage2.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                homeImage2.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
+            homeImage2.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            homeImage2.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            homeImage2.topAnchor.constraint(equalTo: view.topAnchor)
         ])
+         
+
+
+
+
+       
+        
+
+
+
     }
     
     
