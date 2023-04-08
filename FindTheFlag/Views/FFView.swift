@@ -240,9 +240,9 @@ class FFView: UIView  {
 
 
     private var score = 0
-    private var remaining = 27 {
+    private var remaining = 25 {
             didSet {
-                remainingLabel.text = "27/\(remaining)"
+                remainingLabel.text = "25/\(remaining)"
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                     if self.remaining == 0 {
                         if let viewController = self.superview?.next as? UIViewController {
@@ -278,7 +278,7 @@ class FFView: UIView  {
     //MARK: - Label and Image
     let remainingLabel: UILabel = {
         let remainingLabel = UILabel()
-        remainingLabel.text = "27/27"
+        remainingLabel.text = "25/25"
         remainingLabel.textColor = .black
         remainingLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 19)
         remainingLabel.translatesAutoresizingMaskIntoConstraints = false
