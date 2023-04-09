@@ -18,7 +18,7 @@ class FFHomeViewController: UIViewController {
         startButton.tintColor = .white
         startButton.backgroundColor = .black
         startButton.layer.cornerRadius = 17
-        startButton.setTitle("Oyna", for: .normal)
+        startButton.setTitle("Play", for: .normal)
         
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         startButton.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +35,7 @@ class FFHomeViewController: UIViewController {
         settingsButton.tintColor = .white
         settingsButton.backgroundColor = .black
         settingsButton.layer.cornerRadius = 17
-        settingsButton.setTitle("Ayarlar", for: .normal)
+        settingsButton.setTitle("Settings", for: .normal)
         settingsButton.setImage(UIImage(named: "gearshape.fill"), for: .normal)
         
         
