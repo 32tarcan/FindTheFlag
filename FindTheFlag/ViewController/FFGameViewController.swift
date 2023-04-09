@@ -35,6 +35,24 @@ class FFGameViewController: UIViewController {
         present(homeVC, animated: true, completion: nil)
         FFGameViewController.sharedInstance = self
         
+        let homeImage2 = UIImageView()
+        homeImage2.translatesAutoresizingMaskIntoConstraints = false
+        homeImage2.contentMode = .scaleAspectFill
+        homeImage2.backgroundColor = UIColor.clear
+        homeImage2.image = UIImage(named: "flagImages.png")
+        homeImage2.alpha = 0.02
+        
+        view.addSubview(homeImage2)
+        NSLayoutConstraint.activate([
+            homeImage2.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            homeImage2.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            homeImage2.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            homeImage2.topAnchor.constraint(equalTo: view.topAnchor)
+        ])
+        
+        
+        
+        
         
         
     }
@@ -47,7 +65,7 @@ class FFGameViewController: UIViewController {
         
         
         
-        motionManager.startDeviceMotionUpdates(to: .main) { [weak self] motion, error in
+        motionManager.startDeviceMotionUpdates(to: .main) {  motion, error in
             if let acceleration = motion?.userAcceleration,
                acceleration.x > 1.5 || acceleration.y > 1.5 || acceleration.z > 1.5 {
                 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
@@ -83,6 +101,9 @@ class FFGameViewController: UIViewController {
         
         present(alert, animated: true)
     }
+    
+    
+    
     
     
     
