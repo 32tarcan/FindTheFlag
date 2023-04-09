@@ -22,9 +22,9 @@ enum FFSettingsOption: CaseIterable {
         case .contactUs:
             return URL(string: "https://twitter.com/32Tarcann")
         case .terms:
-            return URL(string:"https://github.com/")
+            return URL(string:"https://www.linkedin.com/in/bahad%C4%B1r-tarcan-43aa71151/")
         case .privacy:
-            return URL(string: "https://twitter.com/32Tarcann")
+            return URL(string: "https://github.com/32tarcan")
         case .viewCode:
           return URL(string: "https://github.com/32tarcan/FindTheFlag")
         }
@@ -36,11 +36,11 @@ enum FFSettingsOption: CaseIterable {
         case .rateApp:
             return "Rate App"
         case .contactUs:
-            return "Contac tUs"
+            return "Contact Us"
         case .terms:
-            return "Terms of Service"
+            return "Linkedin"
         case .privacy:
-            return "Privacy Policy"
+            return "Github"
         
         case .viewCode:
             return "View App Code"
