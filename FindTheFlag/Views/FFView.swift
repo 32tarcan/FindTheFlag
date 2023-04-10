@@ -28,7 +28,7 @@ class FFView: UIView  {
     
     
     //MARK: -Buttons
-    private lazy var countryButton1: UIButton = {
+    public lazy var countryButton1: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
         
         
@@ -43,7 +43,7 @@ class FFView: UIView  {
         return button
     }()
     
-    private lazy var countryButton2: UIButton = {
+    public lazy var countryButton2: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
         
         
@@ -60,7 +60,7 @@ class FFView: UIView  {
         return button
     }()
     
-    private lazy var countryButton3: UIButton = {
+    public lazy var countryButton3: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
 
         button.backgroundColor = .darkGray
@@ -78,7 +78,7 @@ class FFView: UIView  {
     }()
     
     
-    private lazy var countryButton4: UIButton = {
+    public lazy var countryButton4: UIButton = {
         let button = UIButton(frame: CGRect(x: 25, y: 25, width: 100, height: 50))
         
         button.backgroundColor = .darkGray
@@ -384,33 +384,33 @@ class FFView: UIView  {
     //MARK: - All Constraints
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            // Button 1
-            countryButton1.topAnchor.constraint(equalTo: topAnchor, constant: 500),
-            countryButton1.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            countryButton1.trailingAnchor.constraint(equalTo: countryButton2.leadingAnchor, constant: -20),
-            countryButton1.bottomAnchor.constraint(equalTo: countryButton3.topAnchor, constant: -20),
-            countryButton1.widthAnchor.constraint(equalTo: countryButton2.widthAnchor),
-            countryButton1.heightAnchor.constraint(equalTo: countryButton3.heightAnchor),
-            
-            // Button 2
-            countryButton2.topAnchor.constraint(equalTo: topAnchor, constant: 500),
-            countryButton2.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            countryButton2.bottomAnchor.constraint(equalTo: countryButton4.topAnchor, constant: -20),
-            countryButton2.widthAnchor.constraint(equalTo: countryButton1.widthAnchor),
-            countryButton2.heightAnchor.constraint(equalTo: countryButton4.heightAnchor),
-            
-            // Button 3
-            countryButton3.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            countryButton3.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100),
-            countryButton3.trailingAnchor.constraint(equalTo: countryButton4.leadingAnchor, constant: -20),
-            countryButton3.widthAnchor.constraint(equalTo: countryButton4.widthAnchor),
-            countryButton3.heightAnchor.constraint(equalTo: countryButton1.heightAnchor),
-            
-            // Button 4
-            countryButton4.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            countryButton4.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100),
-            countryButton4.widthAnchor.constraint(equalTo: countryButton3.widthAnchor),
-            countryButton4.heightAnchor.constraint(equalTo: countryButton2.heightAnchor),
+//            // Button 1
+//            countryButton1.topAnchor.constraint(equalTo: topAnchor, constant: 500),
+//            countryButton1.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+//            countryButton1.trailingAnchor.constraint(equalTo: countryButton2.leadingAnchor, constant: -20),
+//            countryButton1.bottomAnchor.constraint(equalTo: countryButton3.topAnchor, constant: -20),
+//            countryButton1.widthAnchor.constraint(equalTo: countryButton2.widthAnchor),
+//            countryButton1.heightAnchor.constraint(equalTo: countryButton3.heightAnchor),
+//
+//            // Button 2
+//            countryButton2.topAnchor.constraint(equalTo: topAnchor, constant: 500),
+//            countryButton2.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+//            countryButton2.bottomAnchor.constraint(equalTo: countryButton4.topAnchor, constant: -20),
+//            countryButton2.widthAnchor.constraint(equalTo: countryButton1.widthAnchor),
+//            countryButton2.heightAnchor.constraint(equalTo: countryButton4.heightAnchor),
+//
+//            // Button 3
+//            countryButton3.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+//            countryButton3.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100),
+//            countryButton3.trailingAnchor.constraint(equalTo: countryButton4.leadingAnchor, constant: -20),
+//            countryButton3.widthAnchor.constraint(equalTo: countryButton4.widthAnchor),
+//            countryButton3.heightAnchor.constraint(equalTo: countryButton1.heightAnchor),
+//
+//            // Button 4
+//            countryButton4.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+//            countryButton4.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100),
+//            countryButton4.widthAnchor.constraint(equalTo: countryButton3.widthAnchor),
+//            countryButton4.heightAnchor.constraint(equalTo: countryButton2.heightAnchor),
             
             // Flag Image
             countryImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
