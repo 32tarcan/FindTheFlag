@@ -355,7 +355,7 @@ class FFView: UIView  {
         self.ffmodel = FFModel()
         super.init(frame: frame)
         setupViews()
-        addConstraints()
+     //   addConstraints()
         
         
     }
@@ -382,8 +382,8 @@ class FFView: UIView  {
         
     }
     //MARK: - All Constraints
-    private func addConstraints() {
-        NSLayoutConstraint.activate([
+   // private func addConstraints() {
+    //       NSLayoutConstraint.activate([
 //            // Button 1
 //            countryButton1.topAnchor.constraint(equalTo: topAnchor, constant: 500),
 //            countryButton1.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
@@ -412,42 +412,42 @@ class FFView: UIView  {
 //            countryButton4.widthAnchor.constraint(equalTo: countryButton3.widthAnchor),
 //            countryButton4.heightAnchor.constraint(equalTo: countryButton2.heightAnchor),
             
-            // Flag Image
-            countryImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            countryImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -110),
-            countryImageView.widthAnchor.constraint(equalToConstant: 300),
-            countryImageView.heightAnchor.constraint(equalToConstant: 200),
+//            // Flag Image
+//            countryImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+//            countryImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -110),
+//            countryImageView.widthAnchor.constraint(equalToConstant: 300),
+//            countryImageView.heightAnchor.constraint(equalToConstant: 200),
             
-            // Score Label
-            scoreLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
-            scoreLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            
-            // Remaining Label
-            remainingLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
-            remainingLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15),
-            
-            // Heart Images
-            heartImage1.widthAnchor.constraint(equalToConstant: 25),
-            heartImage1.heightAnchor.constraint(equalToConstant: 25),
-            heartImage1.centerYAnchor.constraint(equalTo: scoreLabel.centerYAnchor),
-            heartImage1.trailingAnchor.constraint(equalTo: heartImage2.leadingAnchor, constant: -10),
-
-            heartImage2.widthAnchor.constraint(equalToConstant: 25),
-            heartImage2.heightAnchor.constraint(equalToConstant: 25),
-            heartImage2.centerYAnchor.constraint(equalTo:scoreLabel.centerYAnchor),
-            heartImage2.centerXAnchor.constraint(equalTo:centerXAnchor),
-
-            heartImage3.widthAnchor.constraint(equalToConstant: 25),
-            heartImage3.heightAnchor.constraint(equalToConstant: 25),
-            heartImage3.centerYAnchor.constraint(equalTo:scoreLabel.centerYAnchor),
-            heartImage3.leadingAnchor.constraint(equalTo: heartImage2.trailingAnchor, constant: 10),
-            
-
-        ])
+//            // Score Label
+//            scoreLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
+//            scoreLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+//
+//            // Remaining Label
+//            remainingLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
+//            remainingLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15),
+//
+//            // Heart Images
+//            heartImage1.widthAnchor.constraint(equalToConstant: 25),
+//            heartImage1.heightAnchor.constraint(equalToConstant: 25),
+//            heartImage1.centerYAnchor.constraint(equalTo: scoreLabel.centerYAnchor),
+//            heartImage1.trailingAnchor.constraint(equalTo: heartImage2.leadingAnchor, constant: -10),
+//
+//            heartImage2.widthAnchor.constraint(equalToConstant: 25),
+//            heartImage2.heightAnchor.constraint(equalToConstant: 25),
+//            heartImage2.centerYAnchor.constraint(equalTo:scoreLabel.centerYAnchor),
+//            heartImage2.centerXAnchor.constraint(equalTo:centerXAnchor),
+//
+//            heartImage3.widthAnchor.constraint(equalToConstant: 25),
+//            heartImage3.heightAnchor.constraint(equalToConstant: 25),
+//            heartImage3.centerYAnchor.constraint(equalTo:scoreLabel.centerYAnchor),
+//            heartImage3.leadingAnchor.constraint(equalTo: heartImage2.trailingAnchor, constant: 10),
+//
+//
+//        ])
         
     
         
-    }
+    //}
     
     
     
