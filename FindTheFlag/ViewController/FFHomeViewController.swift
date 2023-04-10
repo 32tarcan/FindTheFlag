@@ -86,12 +86,6 @@ class FFHomeViewController: UIViewController {
             homeImage2.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             homeImage2.topAnchor.constraint(equalTo: view.topAnchor)
         ])
-         
-
-
-
-
-       
         
 
 
@@ -99,7 +93,18 @@ class FFHomeViewController: UIViewController {
     }
     
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        let flagAPI = "https://flag.herokuapp.com/country"
+        let urlString = "\(flagAPI)/turkey"
+        if let url = URL(string: urlString) {
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { (data, response, error) in
+                
+                }
+            task.resume()
+            }
+            
+        }
     
    
     
