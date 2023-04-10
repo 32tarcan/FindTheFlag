@@ -52,10 +52,14 @@ class FFGameViewController: UIViewController {
         
         
         
-        
-        
-        
     }
+    
+    
+    
+        
+    
+    
+    
     
     func setUpView() {
         view.addSubview(ffView)
@@ -71,6 +75,50 @@ class FFGameViewController: UIViewController {
                 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             }
         }
+        
+        
+      
+
+        let buttonPadding: CGFloat = 20.0
+        let buttonHeight: CGFloat = 60.0
+        let buttonWidth: CGFloat = (UIScreen.main.bounds.width - 3*buttonPadding - 10) / 2
+
+        NSLayoutConstraint.activate([
+            // Button 1
+            ffView.countryButton1.topAnchor.constraint(equalTo: ffView.countryImageView.bottomAnchor, constant: buttonPadding + 20),
+            ffView.countryButton1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: buttonPadding),
+            ffView.countryButton1.heightAnchor.constraint(equalToConstant: buttonHeight),
+            ffView.countryButton1.widthAnchor.constraint(equalToConstant: buttonWidth),
+
+            // Button 2
+            ffView.countryButton2.topAnchor.constraint(equalTo: ffView.countryImageView.bottomAnchor, constant: buttonPadding + 20),
+            ffView.countryButton2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -buttonPadding),
+            ffView.countryButton2.heightAnchor.constraint(equalToConstant: buttonHeight),
+            ffView.countryButton2.widthAnchor.constraint(equalToConstant: buttonWidth),
+
+            // Button 3
+            ffView.countryButton3.topAnchor.constraint(equalTo: ffView.countryButton1.bottomAnchor, constant: buttonPadding + 20),
+            ffView.countryButton3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: buttonPadding),
+            ffView.countryButton3.heightAnchor.constraint(equalToConstant: buttonHeight),
+            ffView.countryButton3.widthAnchor.constraint(equalToConstant: buttonWidth),
+
+            // Button 4
+            ffView.countryButton4.topAnchor.constraint(equalTo: ffView.countryButton2.bottomAnchor, constant: buttonPadding + 20),
+            ffView.countryButton4.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -buttonPadding),
+            ffView.countryButton4.heightAnchor.constraint(equalToConstant: buttonHeight),
+            ffView.countryButton4.widthAnchor.constraint(equalToConstant: buttonWidth),
+
+            // Flag Image View
+            ffView.countryImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            ffView.countryImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100),
+            ffView.countryImageView.widthAnchor.constraint(equalToConstant: 400),
+            ffView.countryImageView.heightAnchor.constraint(equalToConstant: 266.66),
+
+        ])
+
+
+
+
         
         
         
