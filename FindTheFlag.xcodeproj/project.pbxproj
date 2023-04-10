@@ -383,10 +383,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H4G2J5WXVR;
+				DEVELOPMENT_TEAM = D857Q9QNF5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FindTheFlag/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FindTheFlag;
+				INFOPLIST_KEY_CFBundleDisplayName = "FindTheFlag Quiz";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -412,10 +412,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H4G2J5WXVR;
+				DEVELOPMENT_TEAM = D857Q9QNF5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FindTheFlag/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = FindTheFlag;
+				INFOPLIST_KEY_CFBundleDisplayName = "FindTheFlag Quiz";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
