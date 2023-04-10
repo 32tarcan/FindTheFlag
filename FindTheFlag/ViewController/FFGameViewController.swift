@@ -87,38 +87,65 @@ class FFGameViewController: UIViewController {
 
         NSLayoutConstraint.activate([
             // Button 1
-            ffView.countryButton1.topAnchor.constraint(equalTo: ffView.countryImageView.bottomAnchor, constant: buttonPadding + 20),
-            ffView.countryButton1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: buttonPadding),
+            ffView.countryButton1.topAnchor.constraint(equalTo: ffView.countryImageView.bottomAnchor, constant: buttonPadding + 150),
+            ffView.countryButton1.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: buttonPadding),
             ffView.countryButton1.heightAnchor.constraint(equalToConstant: buttonHeight),
             ffView.countryButton1.widthAnchor.constraint(equalToConstant: buttonWidth),
 
             // Button 2
-            ffView.countryButton2.topAnchor.constraint(equalTo: ffView.countryImageView.bottomAnchor, constant: buttonPadding + 20),
-            ffView.countryButton2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -buttonPadding),
+            ffView.countryButton2.topAnchor.constraint(equalTo: ffView.countryImageView.bottomAnchor, constant: buttonPadding + 150),
+            ffView.countryButton2.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -buttonPadding),
             ffView.countryButton2.heightAnchor.constraint(equalToConstant: buttonHeight),
             ffView.countryButton2.widthAnchor.constraint(equalToConstant: buttonWidth),
 
             // Button 3
             ffView.countryButton3.topAnchor.constraint(equalTo: ffView.countryButton1.bottomAnchor, constant: buttonPadding),
-            ffView.countryButton3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: buttonPadding),
+            ffView.countryButton3.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: buttonPadding),
             ffView.countryButton3.heightAnchor.constraint(equalToConstant: buttonHeight),
             ffView.countryButton3.widthAnchor.constraint(equalToConstant: buttonWidth),
 
             // Button 4
             ffView.countryButton4.topAnchor.constraint(equalTo: ffView.countryButton2.bottomAnchor, constant: buttonPadding),
-            ffView.countryButton4.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -buttonPadding),
+            ffView.countryButton4.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -buttonPadding),
             ffView.countryButton4.heightAnchor.constraint(equalToConstant: buttonHeight),
             ffView.countryButton4.widthAnchor.constraint(equalToConstant: buttonWidth),
 
-            
             // Flag Image View
-            ffView.countryImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            ffView.countryImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            ffView.countryImageView.widthAnchor.constraint(equalToConstant: 360),
-            ffView.countryImageView.heightAnchor.constraint(equalToConstant: 240),
+            ffView.countryImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            ffView.countryImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 130),
+            ffView.countryImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 120),
+            ffView.countryImageView.heightAnchor.constraint(equalToConstant: (UIScreen.main.bounds.width - 120) * 0.6667),
+
+            // Score Label
+            ffView.scoreLabel.topAnchor.constraint(equalTo: ffView.safeAreaLayoutGuide.topAnchor, constant: 10),
+            ffView.scoreLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+
+            
+            // Remaining Label
+            ffView.remainingLabel.topAnchor.constraint(equalTo: ffView.safeAreaLayoutGuide.topAnchor, constant: 10),
+            ffView.remainingLabel.leadingAnchor.constraint(equalTo: ffView.safeAreaLayoutGuide.leadingAnchor, constant: 15),
+            
+            // Heart Images
+            ffView.heartImage1.widthAnchor.constraint(equalToConstant: 25),
+            ffView.heartImage1.heightAnchor.constraint(equalToConstant: 25),
+            ffView.heartImage1.topAnchor.constraint(equalTo: ffView.safeAreaLayoutGuide.topAnchor, constant: 20),
+            ffView.heartImage1.trailingAnchor.constraint(equalTo: ffView.heartImage2.leadingAnchor, constant: -10),
+
+            ffView.heartImage2.widthAnchor.constraint(equalToConstant: 25),
+            ffView.heartImage2.heightAnchor.constraint(equalToConstant: 25),
+            ffView.heartImage2.topAnchor.constraint(equalTo: ffView.safeAreaLayoutGuide.topAnchor, constant: 20),
+            ffView.heartImage2.centerXAnchor.constraint(equalTo: ffView.centerXAnchor),
+
+            ffView.heartImage3.widthAnchor.constraint(equalToConstant: 25),
+            ffView.heartImage3.heightAnchor.constraint(equalToConstant: 25),
+            ffView.heartImage3.topAnchor.constraint(equalTo: ffView.safeAreaLayoutGuide.topAnchor, constant: 20),
+            ffView.heartImage3.leadingAnchor.constraint(equalTo: ffView.heartImage2.trailingAnchor, constant: 10),
+
             
 
         ])
+       
+
 
 
 
