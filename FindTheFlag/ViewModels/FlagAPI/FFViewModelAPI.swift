@@ -12,7 +12,7 @@ protocol FFViewModelDelegate {
     func didFailWithError(error: Error)
 }
 
-
+// API class
 class FFViewModelAPI {
     
     var delegate: FFViewModelDelegate?
