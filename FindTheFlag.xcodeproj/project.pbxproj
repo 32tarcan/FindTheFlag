@@ -124,7 +124,7 @@
 		AF514FB329C66E86009EF16D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				AFF1055A29D36AE10048877E /* Flag */,
+				AFF1055A29D36AE10048877E /* FlagAPI */,
 				AFF1055929D369CD0048877E /* Settings */,
 			);
 			path = ViewModels;
@@ -150,13 +150,13 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		AFF1055A29D36AE10048877E /* Flag */ = {
+		AFF1055A29D36AE10048877E /* FlagAPI */ = {
 			isa = PBXGroup;
 			children = (
 				AF514FB129C66E80009EF16D /* FFViewModelAPI.swift */,
 				AFEE6E2829CDDAF100459921 /* FlagData.swift */,
 			);
-			path = Flag;
+			path = FlagAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
