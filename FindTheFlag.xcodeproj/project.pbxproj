@@ -116,6 +116,7 @@
 		AF514FB029C66D84009EF16D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AFEE6E2829CDDAF100459921 /* FlagData.swift */,
 				AF514FAE29C66D63009EF16D /* FFModel.swift */,
 			);
 			path = Model;
@@ -154,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				AF514FB129C66E80009EF16D /* FFViewModelAPI.swift */,
-				AFEE6E2829CDDAF100459921 /* FlagData.swift */,
 			);
 			path = FlagAPI;
 			sourceTree = "<group>";

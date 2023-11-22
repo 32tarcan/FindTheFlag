@@ -13,16 +13,13 @@ import UIKit
 /// Controller to show various app options and settings
 class FFSettingsViewController: UIViewController {
     
-    
     private var settingsSwiftUIController: UIHostingController<FFSettingsView>?
    
-        
         override func viewDidLoad() {
             super.viewDidLoad()
             view.backgroundColor = .systemBackground
             title = "Settings"
             addSwiftUIController()
-            
             
             let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44))
             navBar.backgroundColor = .white
@@ -63,12 +60,9 @@ class FFSettingsViewController: UIViewController {
                         self?.handleTap(option: option)
                         
                     }
-                
             })
-      )
-       )
-      )
-
+      )))
+        
         addChild(settingsSwiftUIController)
         settingsSwiftUIController.didMove(toParent: self)
         
@@ -98,7 +92,6 @@ class FFSettingsViewController: UIViewController {
             present(vc, animated: true)
         } else if option == .rateApp {
             //Show rating prompt
-            
                      if let windowScene = view.window?.windowScene {
                          SKStoreReviewController.requestReview(in: windowScene)
                     }

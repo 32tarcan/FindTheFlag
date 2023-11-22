@@ -54,19 +54,12 @@ class FFGameViewController: UIViewController {
         
     }
     
-    
-    
-        
-    
-    
-    
-    
     func setUpView() {
         view.addSubview(ffView)
         viewModel.delegate = self
         viewModel.fetchFlag(index: flagIndex)
         restartGame()
-        
+        constraints()
         
         
         motionManager.startDeviceMotionUpdates(to: .main) {  motion, error in
@@ -75,12 +68,9 @@ class FFGameViewController: UIViewController {
                 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             }
         }
-        
-        
-      
-
-        
-
+    }
+    
+    func constraints() {
         let buttonPadding: CGFloat = 20.0
         let buttonHeight: CGFloat = 60.0
         let buttonWidth: CGFloat = (UIScreen.main.bounds.width - 3*buttonPadding - 10) / 2
@@ -144,19 +134,6 @@ class FFGameViewController: UIViewController {
             
 
         ])
-       
-
-
-
-
-
-
-        
-        
-        
-        
-        
-        
     }
     
     func restartGame() {
@@ -181,22 +158,7 @@ class FFGameViewController: UIViewController {
         
         present(alert, animated: true)
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }
-    
-    
-
-
-    
-
-
 
 extension FFHomeViewController {
     func presentGameViewController() {
